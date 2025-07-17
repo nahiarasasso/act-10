@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=+
+    , initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+
+     <script src="index.js" defer></script>
+    <title>Actividad 10</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📄 Generador de Informes PDF</h1>
+        <p class="subtitle">EEST N.º 1 "Eduardo Ader" - Vicente López</p>
+        <div class="school-info">
+            <p><strong>Materia:</strong> Proyecto de Implementación de Sitios web Dinámicos</p>
+            <p><strong>EEST N.º 1 "Eduardo Ader"</strong> - Vicente López</p>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <form id="reportForm">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="name">👤 Nombre Completo:</label>
+                    <input type="text" id="name" required placeholder="Ingresa tu nombre completo">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">📧 Correo Electrónico:</label>
+                    <input type="email" id="email" required placeholder="ejemplo@correo.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="age">🎂 Edad:</label>
+                    <input type="number" id="age" min="1" max="120" placeholder="Ingresa tu edad">
+                </div>
+
+                <div class="input-group">
+                    <label for="course">📚 Curso:</label>
+                    <select id="course">
+                        <option value="">Selecciona tu curso</option>
+                        <option value="1°1">1°1</option>
+                        <option value="1°2">1°2</option>
+                        <option value="1°3">1°3</option>
+                        <option value="1°4">1°4</option>
+                        <option value="1°5">1°5</option>
+                        <option value="2°1">2°1</option>
+                        <option value="2°2">2°2</option>
+                        <option value="2°3">2°3</option>
+                        <option value="2°4">2°4</option>
+                        <option value="2°5">2°5</option>
+                        <option value="3°1">3°1</option>
+                        <option value="3°2">3°2</option>
+                        <option value="3°3">3°3</option>
+                        <option value="3°4">3°4</option>
+                        <option value="4°1">4°1</option>
+                        <option value="4°2">4°2</option>
+                        <option value="4°3">4°3</option>
+                        <option value="4°4">4°4</option>
+                        <option value="5°1">5°1</option>
+                        <option value="5°2">5°2</option>
+                        <option value="5°3">5°3</option>
+                        <option value="6°1">6°1</option>
+                        <option value="6°2">6°2</option>
+                        <option value="6°3">6°3</option>
+                        <option value="7°1">7°1</option>
+                        <option value="7°2">7°2</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="project">🚀 Proyecto:</label>
+                    <input type="text" id="project" placeholder="Nombre del proyecto">
+                </div>
+
+                <div class="input-group">
+                    <label for="projectLink">🔗 Link del Proyecto:</label>
+                    <input type="url" id="projectLink" placeholder="https://ejemplo.com/mi-proyecto">
+                </div>
+
+                <div class="input-group">
+                    <label for="date">📅 Fecha:</label>
+                    <input type="date" id="date">
+                </div>
+            </div>
+
+            <div class="input-group" style="grid-column: 1 / -1;">
+                <label for="description">📝 Descripción del Proyecto:</label>
+                <textarea id="description" rows="4" placeholder="Describe brevemente tu proyecto..." style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; font-family: inherit; resize: vertical; transition: all 0.3s ease;"></textarea>
+            </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="generate-btn" onclick="generateReport()">
+                    📤 Generar Informe PDF
+                </button>
+            </div>
+        </form>
+
+        <div id="reportContainer" class="pdf-preview">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                Generando informe...
+            </div>
+            <p id="placeholder">📋 Aquí aparecerá la vista previa de tu informe PDF</p>
+        </div>
+    </div>
+</div>
+    <!-- Librería jsPDF desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    
+</body>
+</html>
